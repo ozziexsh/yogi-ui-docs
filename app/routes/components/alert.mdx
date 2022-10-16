@@ -1,0 +1,43 @@
+# Alert
+
+import { Alert } from 'yogi-ui';
+
+<div className={'space-y-4'}>
+  <Alert status={'info'}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae consectetur cumque, dolore doloremque ducimus facilis</Alert>
+  <Alert status={'success'}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae consectetur cumque, dolore doloremque ducimus facilis</Alert>
+  <Alert status={'warning'}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae consectetur cumque, dolore doloremque ducimus facilis</Alert>
+  <Alert status={'error'}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae consectetur cumque, dolore doloremque ducimus facilis</Alert>
+</div>
+
+```tsx
+import { Alert } from 'yogi-ui';
+
+<div className={'space-y-4'}>
+  <Alert status={'info'}>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae consectetur cumque, dolore doloremque ducimus facilis
+  </Alert>
+  <Alert status={'success'}>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae consectetur cumque, dolore doloremque ducimus facilis
+  </Alert>
+  <Alert status={'warning'}>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae consectetur cumque, dolore doloremque ducimus facilis
+  </Alert>
+  <Alert status={'error'}>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae consectetur cumque, dolore doloremque ducimus facilis
+  </Alert>
+</div>
+```
+
+# Customization
+
+import {FaceSmileIcon} from '@heroicons/react/24/outline'
+
+<Alert colorScheme={'indigo'} icon={FaceSmileIcon}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae consectetur cumque, dolore doloremque ducimus facilis</Alert>
+
+```tsx
+import { FaceSmileIcon } from '@heroicons/react/24/outline';
+
+<Alert colorScheme={'indigo'} icon={FaceSmileIcon}>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae consectetur cumque, dolore doloremque ducimus facilis
+</Alert>
+```

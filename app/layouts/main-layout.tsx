@@ -1,4 +1,3 @@
-import { Disclosure } from '@headlessui/react';
 import classNames from 'classnames';
 import { PropsWithChildren } from 'react';
 import { Link } from '@remix-run/react';
@@ -9,50 +8,11 @@ const navigation = [
     name: 'Components',
     current: false,
     children: [
+      { name: 'Alert', href: '/components/alert' },
+      { name: 'Avatar', href: '/components/Avatar' },
       { name: 'Button', href: '/components/button' },
-      { name: 'Members', href: '#' },
-      { name: 'Calendar', href: '#' },
-      { name: 'Settings', href: '#' },
-    ],
-  },
-  {
-    name: 'Projects',
-    current: false,
-    children: [
-      { name: 'Overview', href: '#' },
-      { name: 'Members', href: '#' },
-      { name: 'Calendar', href: '#' },
-      { name: 'Settings', href: '#' },
-    ],
-  },
-  {
-    name: 'Calendar',
-    current: false,
-    children: [
-      { name: 'Overview', href: '#' },
-      { name: 'Members', href: '#' },
-      { name: 'Calendar', href: '#' },
-      { name: 'Settings', href: '#' },
-    ],
-  },
-  {
-    name: 'Documents',
-    current: false,
-    children: [
-      { name: 'Overview', href: '#' },
-      { name: 'Members', href: '#' },
-      { name: 'Calendar', href: '#' },
-      { name: 'Settings', href: '#' },
-    ],
-  },
-  {
-    name: 'Reports',
-    current: false,
-    children: [
-      { name: 'Overview', href: '#' },
-      { name: 'Members', href: '#' },
-      { name: 'Calendar', href: '#' },
-      { name: 'Settings', href: '#' },
+      { name: 'Badge', href: '/components/badge' },
+      { name: 'Checkbox', href: '/components/checkbox' },
     ],
   },
 ];

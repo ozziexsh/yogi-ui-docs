@@ -1,0 +1,45 @@
+# Checkbox
+
+import { Checkbox } from 'yogi-ui';
+
+<div className={'flex flex-col space-y-1'}>
+  <Checkbox defaultChecked={true}>Apples</Checkbox>
+  <Checkbox>Oranges</Checkbox>
+  <Checkbox colorScheme={'red'} defaultChecked={true}>Other</Checkbox>
+</div>
+
+```tsx
+import { Checkbox } from 'yogi-ui';
+
+<div className={'flex flex-col space-y-1'}>
+  <Checkbox>Apples</Checkbox>
+  <Checkbox>Oranges</Checkbox>
+  <Checkbox colorScheme={'red'} defaultChecked={true}>Other</Checkbox>
+</div>
+```
+
+## Checkbox Group
+
+import { CheckboxGroup } from 'yogi-ui';
+
+<div className={'flex flex-col space-y-1'}>
+  <CheckboxGroup colorScheme={'teal'}>
+    <Checkbox value={'apples'}>Apples</Checkbox>
+    <Checkbox value={'oranges'}>Oranges</Checkbox>
+    <Checkbox value={'other'}>Other</Checkbox>
+  </CheckboxGroup>
+</div>
+
+```tsx
+import { CheckboxGroup } from 'yogi-ui';
+
+const [state, setState] = useState([]);
+
+<div className={'flex flex-col space-y-1'}>
+  <CheckboxGroup colorScheme={'teal'} value={state} onChange={setState}>
+    <Checkbox value={'apples'}>Apples</Checkbox>
+    <Checkbox value={'oranges'}>Oranges</Checkbox>
+    <Checkbox value={'other'}>Other</Checkbox>
+  </CheckboxGroup>
+</div>
+```

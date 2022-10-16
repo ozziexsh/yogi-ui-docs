@@ -1,0 +1,57 @@
+# Button
+
+import { Button } from 'yogi-ui';
+
+## Variants / Colors
+
+<div className={'flex items-center space-x-2'}>
+  <Button>Solid Button</Button>
+  <Button variant={'outline'} colorScheme={'emerald'}>Outline Button</Button>
+  <Button variant={'ghost'} colorScheme={'rose'}>Ghost Button</Button>
+  <Button variant={'subtle'} colorScheme={'teal'}>Subtle Button</Button>
+  <Button variant={'link'} colorScheme={'blue'}>Link Button</Button>
+</div>
+
+```tsx
+import { Button } from 'yogi-ui';
+
+<div className={'flex items-center space-x-2'}>
+  <Button>Solid Button</Button>
+  <Button variant={'outline'} colorScheme={'emerald'}>Outline Button</Button>
+  <Button variant={'ghost'} colorScheme={'rose'}>Ghost Button</Button>
+  <Button variant={'subtle'} colorScheme={'teal'}>Subtle Button</Button>
+  <Button variant={'link'} colorScheme={'blue'}>Link Button</Button>
+</div>
+```
+
+## Icons
+
+import { TrashIcon } from '@heroicons/react/24/outline';
+
+<div className={'flex items-center space-x-2'}>
+  <Button leftIcon={<TrashIcon className={'w-4 h-4'} />}>Delete Post</Button>
+  <Button rightIcon={<TrashIcon className={'w-4 h-4'} />} variant={'subtle'}>Delete Post</Button>
+</div>
+
+```tsx
+import { TrashIcon } from '@heroicons/react/24/outline';
+
+<div className={'flex items-center space-x-2'}>
+  <Button leftIcon={<TrashIcon className={'w-4 h-4'} />}>Delete Post</Button>
+  <Button rightIcon={<TrashIcon className={'w-4 h-4'} />} variant={'subtle'}>Delete Post</Button>
+</div>
+```
+
+## Loading
+
+<div className={'flex items-center space-x-2'}>
+  <Button loading={true}>Solid Button</Button>
+  <Button variant={'subtle'} loading={true}>Subtle Button</Button>
+</div>
+
+```tsx
+<div className={'flex items-center space-x-2'}>
+  <Button loading={true}>Solid Button</Button>
+  <Button variant={'subtle'} loading={true}>Subtle Button</Button>
+</div>
+```

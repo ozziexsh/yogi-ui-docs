@@ -1,0 +1,155 @@
+# Drawer
+
+import { Button, Drawer, DrawerHeader, DrawerBody } from "yogi-ui";
+import { useState } from 'react';
+
+export const DrawerExample = () => {
+  const [rightDrawer, setRightDrawer] = useState(false);
+  const [leftDrawer, setLeftDrawer] = useState(false);
+  const [topDrawer, setTopDrawer] = useState(false);
+  const [bottomDrawer, setBottomDrawer] = useState(false);
+  return (<div>
+    <div className="flex flex-col items-start space-y-2 sm:flex-row sm:flex-wrap sm:items-center sm:space-y-0 sm:space-x-4">
+      <Button onClick={() => setRightDrawer(true)}>Open Right Drawer</Button>
+      <Button onClick={() => setLeftDrawer(true)}>Open Left Drawer</Button>
+      <Button onClick={() => setTopDrawer(true)}>Open Top Drawer</Button>
+      <Button onClick={() => setBottomDrawer(true)}>Open Bottom Drawer</Button>
+    </div>
+    <Drawer open={rightDrawer} onClose={() => setRightDrawer(false)}>
+      <DrawerHeader>Right Drawer</DrawerHeader>
+      <DrawerBody>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+          blanditiis consequatur culpa dolor ducimus eveniet iste, maxime
+          natus nemo nisi, non nulla numquam odio perspiciatis quo
+          similique sit totam voluptatem?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+          blanditiis consequatur culpa dolor ducimus eveniet iste, maxime
+          natus nemo nisi, non nulla numquam odio perspiciatis quo
+          similique sit totam voluptatem?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+          blanditiis consequatur culpa dolor ducimus eveniet iste, maxime
+          natus nemo nisi, non nulla numquam odio perspiciatis quo
+          similique sit totam voluptatem?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+          blanditiis consequatur culpa dolor ducimus eveniet iste, maxime
+          natus nemo nisi, non nulla numquam odio perspiciatis quo
+          similique sit totam voluptatem?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+          blanditiis consequatur culpa dolor ducimus eveniet iste, maxime
+          natus nemo nisi, non nulla numquam odio perspiciatis quo
+          similique sit totam voluptatem?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+          blanditiis consequatur culpa dolor ducimus eveniet iste, maxime
+          natus nemo nisi, non nulla numquam odio perspiciatis quo
+          similique sit totam voluptatem?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+          blanditiis consequatur culpa dolor ducimus eveniet iste, maxime
+          natus nemo nisi, non nulla numquam odio perspiciatis quo
+          similique sit totam voluptatem?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+          blanditiis consequatur culpa dolor ducimus eveniet iste, maxime
+          natus nemo nisi, non nulla numquam odio perspiciatis quo
+          similique sit totam voluptatem?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+          blanditiis consequatur culpa dolor ducimus eveniet iste, maxime
+          natus nemo nisi, non nulla numquam odio perspiciatis quo
+          similique sit totam voluptatem?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+          blanditiis consequatur culpa dolor ducimus eveniet iste, maxime
+          natus nemo nisi, non nulla numquam odio perspiciatis quo
+          similique sit totam voluptatem?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+          blanditiis consequatur culpa dolor ducimus eveniet iste, maxime
+          natus nemo nisi, non nulla numquam odio perspiciatis quo
+          similique sit totam voluptatem?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+          blanditiis consequatur culpa dolor ducimus eveniet iste, maxime
+          natus nemo nisi, non nulla numquam odio perspiciatis quo
+          similique sit totam voluptatem?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+          blanditiis consequatur culpa dolor ducimus eveniet iste, maxime
+          natus nemo nisi, non nulla numquam odio perspiciatis quo
+          similique sit totam voluptatem?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+          blanditiis consequatur culpa dolor ducimus eveniet iste, maxime
+          natus nemo nisi, non nulla numquam odio perspiciatis quo
+          similique sit totam voluptatem?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+          blanditiis consequatur culpa dolor ducimus eveniet iste, maxime
+          natus nemo nisi, non nulla numquam odio perspiciatis quo
+          similique sit totam voluptatem?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+          blanditiis consequatur culpa dolor ducimus eveniet iste, maxime
+          natus nemo nisi, non nulla numquam odio perspiciatis quo
+          similique sit totam voluptatem?
+        </p>
+      </DrawerBody>
+    </Drawer>
+    <Drawer direction={'left'} open={leftDrawer} onClose={() => setLeftDrawer(false)}>
+      <DrawerHeader>Left Drawer</DrawerHeader>
+      <DrawerBody>Content</DrawerBody>
+    </Drawer>
+    <Drawer direction={'top'} open={topDrawer} onClose={() => setTopDrawer(false)}>
+      <DrawerHeader>Top Drawer</DrawerHeader>
+      <DrawerBody>Content</DrawerBody>
+    </Drawer>
+    <Drawer direction={'bottom'} open={bottomDrawer} onClose={() => setBottomDrawer(false)}>
+      <DrawerHeader>Bottom Drawer</DrawerHeader>
+      <DrawerBody>Content</DrawerBody>
+    </Drawer>
+  </div>);
+}
+
+<DrawerExample />
+
+```tsx
+import { useState } from 'react';
+import { Button, Drawer, DrawerHeader, DrawerBody } from "yogi-ui";
+
+const [open, setOpen] = useState(false);
+
+<Button onClick={() => setOpen(true)}>Open Drawer</Button>
+
+<Drawer direction={'left'} open={open} onClose={() => setOpen(false)}>
+  <DrawerHeader>Left Drawer</DrawerHeader>
+  <DrawerBody>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+      blanditiis consequatur culpa dolor ducimus eveniet iste, maxime
+      natus nemo nisi, non nulla numquam odio perspiciatis quo
+      similique sit totam voluptatem?
+    </p>
+  </DrawerBody>
+</Drawer>
+```

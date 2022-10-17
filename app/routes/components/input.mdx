@@ -1,0 +1,49 @@
+# Input
+
+import { FormControl, Label, FormErrorMessage, FormHelperMessage, Input } from "yogi-ui";
+
+<div className={'space-y-4'}>
+  <FormControl>
+    <Label>Your Name</Label>
+    <Input />
+  </FormControl>
+  <FormControl required={true}>
+    <Label>Your Email</Label>
+    <Input />
+  </FormControl>
+  <FormControl>
+    <Label>City</Label>
+    <Input />
+    <FormHelperMessage>The city you live in</FormHelperMessage>
+  </FormControl>
+  <FormControl invalid={true}>
+    <Label>Favourite Food</Label>
+    <Input defaultValue={'pizza'} />
+    <FormErrorMessage>Be more specific</FormErrorMessage>
+  </FormControl>
+</div>
+
+```jsx
+import { FormControl, Label, FormErrorMessage, FormHelperMessage, Input } from "yogi-ui";
+
+<div className={'space-y-4'}>
+  <FormControl>
+    <Label>Your Name</Label>
+    <Input />
+  </FormControl>
+  <FormControl required={true}>
+    <Label>Your Email</Label>
+    <Input />
+  </FormControl>
+  <FormControl>
+    <Label>City</Label>
+    <Input />
+    <FormHelperMessage>The city you live in</FormHelperMessage>
+  </FormControl>
+  <FormControl invalid={true}>
+    <Label>Favourite Food</Label>
+    <Input defaultValue={'pizza'} />
+    <FormErrorMessage>Be more specific</FormErrorMessage>
+  </FormControl>
+</div>
+```

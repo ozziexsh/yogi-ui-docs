@@ -30,12 +30,12 @@ export const meta: MetaFunction = () => ({
 
 export default function App() {
   return (
-    <html lang="en">
+    <html lang="en" className={'h-full bg-gray-100'}>
       <head>
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className={'h-full'}>
         <YogiProvider>
           <TestContext.Provider value={'abcd'}>
             <MainLayout>

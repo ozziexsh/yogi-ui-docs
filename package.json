@@ -26,7 +26,7 @@
     "react-dom": "^18.2.0",
     "rehype-highlight": "^6.0.0",
     "remark-torchlight": "^0.0.2",
-    "yogi-ui": "../../ozziesh/yogi-ui/yogi-ui-0.0.1.tgz"
+    "yogi-ui": "file:../yogi-ui/yogi-ui-0.0.1.tgz"
   },
   "devDependencies": {
     "@remix-run/dev": "^1.7.2",

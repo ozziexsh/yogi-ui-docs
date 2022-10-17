@@ -1,0 +1,48 @@
+<div className={'prose prose-pre:bg-inherit prose-pre:p-0 mx-auto max-w-4xl'}>
+# Installation
+
+Install the dependency into your project
+
+```bash
+  npm i yogi-ui @headlessui/react @tailwindcss/forms
+```
+
+Setup Tailwind config
+
+```js
+const { yogiSafelist } = require('yogi-ui');
+
+module.exports = {
+  content: [
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
+    './node_modules/yogi-ui/dist/**/*.{js,jsx,ts,tsx}',
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [
+    require('@tailwindcss/forms')
+  ],
+  safelist: [
+    ...yogiSafelist({
+      // specify any additional colors you will use
+      // this will be merged with our required colors
+      colors: ['brand']
+    })
+  ],
+};
+```
+
+Add the provider to your app
+
+```jsx
+import { YogiProvider } from 'yogi-ui';
+
+ReactDOM.render(
+  <YogiProvider>
+    <App />
+  </YogiProvider>,
+  document.getElementById('root')
+);
+```
+</div>

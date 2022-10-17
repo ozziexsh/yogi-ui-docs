@@ -1,0 +1,55 @@
+# Icon Button
+
+import { IconButton } from 'yogi-ui';
+import { TrashIcon } from "@heroicons/react/24/outline";
+
+<div className="flex flex-col items-start space-y-2 sm:flex-row sm:flex-wrap sm:items-center sm:space-y-0 sm:space-x-4">
+  <IconButton icon={TrashIcon} />
+  <IconButton
+    icon={TrashIcon}
+    variant={'subtle'}
+    colorScheme={'red'}
+  />
+  <IconButton
+    icon={TrashIcon}
+    variant={'ghost'}
+    colorScheme={'teal'}
+  />
+  <IconButton
+    icon={TrashIcon}
+    variant={'outline'}
+    colorScheme={'slate'}
+  />
+  <IconButton
+    icon={TrashIcon}
+    variant={'link'}
+  />
+</div>
+
+```jsx
+import { IconButton } from 'yogi-ui';
+import { TrashIcon } from "@heroicons/react/24/outline";
+
+<div className="flex flex-col items-start space-y-2 sm:flex-row sm:flex-wrap sm:items-center sm:space-y-0 sm:space-x-4">
+  <IconButton icon={TrashIcon} />
+  <IconButton
+    icon={TrashIcon}
+    variant={'subtle'}
+    colorScheme={'red'}
+  />
+  <IconButton
+    icon={TrashIcon}
+    variant={'ghost'}
+    colorScheme={'teal'}
+  />
+  <IconButton
+    icon={TrashIcon}
+    variant={'outline'}
+    colorScheme={'slate'}
+  />
+  <IconButton
+    icon={TrashIcon}
+    variant={'link'}
+  />
+</div>
+```

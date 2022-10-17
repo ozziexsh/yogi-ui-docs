@@ -1,0 +1,40 @@
+# Radio
+
+import { Radio, RadioGroup } from 'yogi-ui';
+
+<div className={'flex flex-col space-y-1'}>
+  <Radio>Apples</Radio>
+  <Radio>Oranges</Radio>
+  <Radio>Other</Radio>
+</div>
+
+```jsx
+import { Radio } from 'yogi-ui';
+
+<div className={'flex flex-col space-y-1'}>
+  <Radio>Apples</Radio>
+  <Radio>Oranges</Radio>
+  <Radio>Other</Radio>
+</div>
+```
+
+<div className={'flex flex-col space-y-1 mt-4'}>
+  <RadioGroup colorScheme={'teal'}>
+    <Radio name={'fruit'} value={'apples'}>Apples</Radio>
+    <Radio name={'fruit'} value={'oranges'}>Oranges</Radio>
+    <Radio name={'fruit'} value={'other'}>Other</Radio>
+  </RadioGroup>
+</div>
+
+```jsx
+import { Radio, RadioGroup } from 'yogi-ui';
+
+<div className={'flex flex-col space-y-1'}>
+  <RadioGroup colorScheme={'teal'}>
+    <Radio name={'fruit'} value={'apples'}>Apples</Radio>
+    <Radio name={'fruit'} value={'oranges'}>Oranges</Radio>
+    <Radio name={'fruit'} value={'other'}>Other</Radio>
+  </RadioGroup>
+</div>
+
+```

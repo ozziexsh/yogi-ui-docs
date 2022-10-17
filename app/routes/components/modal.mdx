@@ -1,0 +1,144 @@
+# Modal
+
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "yogi-ui";
+import { useState } from "react";
+
+export const ModalExample = () => {
+  const [normal, setNormal] = useState(false);
+  const [noHeader, setNoHeader] = useState(false);
+  const [noFooter, setNoFooter] = useState(false);
+
+  return (
+    <div>
+      <div className="flex flex-col items-start space-y-2 sm:flex-row sm:flex-wrap sm:items-center sm:space-y-0 sm:space-x-4">
+        <Button onClick={() => setNormal(true)}>Open modal</Button>
+        <Button onClick={() => setNoHeader(true)}>Modal without header</Button>
+        <Button onClick={() => setNoFooter(true)}>Modal without footer</Button>
+      </div>
+
+      <Modal open={normal} onClose={() => setNormal(false)}>
+        <ModalHeader>Create an account</ModalHeader>
+        <ModalBody>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Assumenda dignissimos ex laborum soluta! Accusantium commodi
+            dicta dolorem, esse exercitationem illo in, ipsum molestiae nam,
+            nobis obcaecati rem repellendus reprehenderit vel?
+          </p>
+        </ModalBody>
+        <ModalFooter>
+          <div className="flex items-center justify-end space-x-2">
+            <Button variant={'ghost'} onClick={() => setNormal(false)}>
+              Cancel
+            </Button>
+            <Button onClick={() => setNormal(false)}>Create</Button>
+          </div>
+        </ModalFooter>
+      </Modal>
+
+      <Modal open={noHeader} onClose={() => setNoHeader(false)}>
+        <ModalBody>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Assumenda dignissimos ex laborum soluta! Accusantium commodi
+            dicta dolorem, esse exercitationem illo in, ipsum molestiae nam,
+            nobis obcaecati rem repellendus reprehenderit vel?
+          </p>
+        </ModalBody>
+        <ModalFooter>
+          <div className="flex items-center justify-end space-x-2">
+            <Button variant={'ghost'} onClick={() => setNormal(false)}>
+              Cancel
+            </Button>
+            <Button onClick={() => setNoHeader(false)}>Create</Button>
+          </div>
+        </ModalFooter>
+      </Modal>
+
+      <Modal open={noFooter} onClose={() => setNoFooter(false)}>
+        <ModalBody>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Assumenda dignissimos ex laborum soluta! Accusantium commodi
+            dicta dolorem, esse exercitationem illo in, ipsum molestiae nam,
+            nobis obcaecati rem repellendus reprehenderit vel?
+          </p>
+        </ModalBody>
+      </Modal>
+    </div>
+  )
+}
+
+<ModalExample />
+
+```jsx
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "yogi-ui";
+import { useState } from "react";
+
+export const ModalExample = () => {
+  const [normal, setNormal] = useState(false);
+  const [noHeader, setNoHeader] = useState(false);
+  const [noFooter, setNoFooter] = useState(false);
+
+  return (
+    <div>
+      <div className="flex flex-row items-center space-x-4">
+        <Button onClick={() => setNormal(true)}>Open modal</Button>
+        <Button onClick={() => setNoHeader(true)}>Modal without header</Button>
+        <Button onClick={() => setNoFooter(true)}>Modal without footer</Button>
+      </div>
+
+      <Modal open={normal} onClose={() => setNormal(false)}>
+        <ModalHeader>Create an account</ModalHeader>
+        <ModalBody>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Assumenda dignissimos ex laborum soluta! Accusantium commodi
+            dicta dolorem, esse exercitationem illo in, ipsum molestiae nam,
+            nobis obcaecati rem repellendus reprehenderit vel?
+          </p>
+        </ModalBody>
+        <ModalFooter>
+          <div className="flex items-center justify-end space-x-2">
+            <Button variant={'ghost'} onClick={() => setNormal(false)}>
+              Cancel
+            </Button>
+            <Button onClick={() => setNormal(false)}>Create</Button>
+          </div>
+        </ModalFooter>
+      </Modal>
+
+      <Modal open={noHeader} onClose={() => setNoHeader(false)}>
+        <ModalBody>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Assumenda dignissimos ex laborum soluta! Accusantium commodi
+            dicta dolorem, esse exercitationem illo in, ipsum molestiae nam,
+            nobis obcaecati rem repellendus reprehenderit vel?
+          </p>
+        </ModalBody>
+        <ModalFooter>
+          <div className="flex items-center justify-end space-x-2">
+            <Button variant={'ghost'} onClick={() => setNormal(false)}>
+              Cancel
+            </Button>
+            <Button onClick={() => setNoHeader(false)}>Create</Button>
+          </div>
+        </ModalFooter>
+      </Modal>
+
+      <Modal open={noFooter} onClose={() => setNoFooter(false)}>
+        <ModalBody>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Assumenda dignissimos ex laborum soluta! Accusantium commodi
+            dicta dolorem, esse exercitationem illo in, ipsum molestiae nam,
+            nobis obcaecati rem repellendus reprehenderit vel?
+          </p>
+        </ModalBody>
+      </Modal>
+    </div>
+  )
+}
+}
+```

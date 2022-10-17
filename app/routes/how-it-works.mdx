@@ -1,0 +1,110 @@
+<div className={'prose prose-pre:bg-inherit prose-pre:p-0 mx-auto max-w-4xl'}>
+# How it works
+
+
+## Class name overrides
+
+Under the hood Yogi UI uses [tailwind-merge](https://github.com/dcastil/tailwind-merge) to ensure the proper class names are applied.
+
+A component implementation might look like this:
+
+```jsx
+import classNames from 'classnames';
+import { twMerge } from 'tailwind-merge';
+
+export default function Heading({ children, className }) {
+  return (
+    <h1 className={twMerge(classNames('text-xl text-gray-600', className))}>
+      {children}
+    </h1>
+  )
+}
+```
+
+Which means when you call this in your app you will get the default styling:
+
+```jsx
+<Heading>My Heading</Heading>
+```
+
+But when you want more control, you can specify other classes you may need, including any that conflict with the default ones we provide.
+
+```jsx
+{/* applies the classes text-4xl text-gray-600 underline */}
+<Heading className={'text-4xl underline'}>My New Heading</Heading>
+```
+
+If you are interested in learning more, please checkout the [tailwind-merge repo on GitHub](https://github.com/dcastil/tailwind-merge).
+
+## Color schemes / Dynamic class names
+
+Yogi UI provides an API that allows you to pass the name of a color (any valid color in your tailwind config) and have the component apply the appropriate weighted styles.
+
+For example, take a stripped down version of how the button component is implemented:
+
+```jsx
+function Button({ children, colorScheme = 'cyan' }) {
+  return (
+    <button className={`bg-${colorScheme}-600 hover:bg-${colorScheme}-500 text-white`}>
+      {children}
+    </button>
+  )
+}
+```
+
+This gives us a clean API that provides balanced colors among the text, background, border, and hover states without needing to
+rewrite the full class list everytime.
+
+```jsx
+<Button>Cyan Button</Button>
+
+<Button colorScheme={'indigo'}>Indigo Button</Button>
+```
+
+However this won't work out of the box in Tailwind due to the way it produces the compiled CSS.
+
+Tailwind generates classes by searching through the paths specified in the `content` array in `tailwind.config.json` looking for any string
+that matches a certain regex for their schema, eg `bg-blue-400`, and only generates the classes that it finds.
+
+This is crucial because of the sheer amount of classes tailwind can generate (including variants, etc) could be huge, so they only want
+to generate the classes actually being used in your project.
+
+Unfortunately for this library, that means it can't detect things like `bg-${colorScheme}-400` as it doesn't know what `colorScheme` is supposed to be!
+
+In order to get around this, we need to utilize Tailwind's `safelist` API to make sure the proper classes get generated.
+
+By default, Yogi UI generates the classes it needs by using the `yogiSafelist` helper provided
+
+```js
+// tailwind.config.js
+const { yogiSafelist } = require('yogi-ui');
+
+module.exports = {
+  // ... etc
+  safelist: [
+    ...yogiSafelist()
+  ]
+}
+```
+
+This generates the required `bg-*-*`, `text-*-*`, and `border-*-*` classes for the colors the default theme uses. If you are going
+to be using other colors in your app, such as one of the other defaults like `slate` or `violet`, or perhaps you have your own colors
+configured like `brand` or `primary`, you can add them as a config option to that function call
+
+```js
+// tailwind.config.js
+const { yogiSafelist } = require('yogi-ui');
+
+module.exports = {
+  // ... etc
+  safelist: [
+    ...yogiSafelist({ colors: ['brand', 'violet'] })
+  ]
+}
+```
+
+This is a less than optimal way to handle this but unfortunately it is the only path forward I see that lets us maintain the nice API.
+
+At the end of the day this may result in +/ 50kb css, which isn't terrible.
+
+</div>

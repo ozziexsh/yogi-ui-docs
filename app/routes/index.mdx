@@ -1,0 +1,69 @@
+import { Button, Alert } from "yogi-ui";
+
+<div className={'prose prose-pre:bg-inherit prose-pre:p-0 mx-auto max-w-4xl'}>
+
+<div className={'not-prose mb-4'}>
+  <Alert status={'warning'}>
+    This component library and documentation is still a work in progress, styles may change and bugs may arise!
+  </Alert>
+</div>
+
+# Yogi UI
+
+Yogi UI is a component library powered entirely by tailwind, no CSS-in-JS here.
+
+Our **ready-to-go components** are styled using normal Tailwind classes and allow you to easily modify them as we run every
+exposed `className` prop through [tailwind-merge](https://github.com/dcastil/tailwind-merge) to ensure
+your styles always take precedence.
+
+Check it out:
+
+<div className={'flex space-x-2 items-center'}>
+  <Button>Solid Button</Button>
+  <Button variant={'subtle'}>Variant Button</Button>
+  <Button className={'bg-yellow-400 hover:bg-yellow-200 text-red-600 text-xl'}>Ugly Custom Button</Button>
+</div>
+
+```jsx
+import { Button } from 'yogi-ui';
+
+<Button>Solid Button</Button>
+<Button variant={'subtle'}>Variant Button</Button>
+<Button className={'bg-yellow-400 hover:bg-yellow-200 text-red-600 text-xl'}>
+  Ugly Custom Button
+</Button>
+```
+
+Many components expose `variant` and `colorScheme` props to quickly apply styles using built in Tailwind color classes.
+
+You can also override any of the default styles to customize the library to your liking.
+
+```jsx
+import { YogiProvider, defaultTheme, extendTheme } from 'yogi-ui';
+
+const customTheme = extendTheme(defaultTheme, {
+  colorScheme: 'red',
+  components: {
+    Button: {
+      // extend base styles
+      className: `${defaultTheme.components.Button.className} px-4 py-2`,
+      // add your own variants
+      variants: {
+        myCustomVariant: color => `border-4 border-${color}-700 text-4xl`
+      }
+    },
+    Label: {
+      // completely replace base styles
+      className: 'text-md text-gray-400',
+    }
+  }
+});
+
+ReactDOM.render(
+  <YogiProvider theme={customTheme}>
+    <App />
+  </YogiProvider>,
+  document.getElementById('root')
+);
+```
+</div>

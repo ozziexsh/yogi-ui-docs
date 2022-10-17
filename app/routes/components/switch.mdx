@@ -1,0 +1,61 @@
+# Switch
+
+import { Switch, SwitchLabel, SwitchGroup } from 'yogi-ui';
+import { useState } from 'react';
+
+export const SwitchExample = () => {
+  const [on, setOn] = useState(false);
+
+  return (
+    <div className={'space-y-4'}>
+      <div>
+        <Switch checked={on} onChange={setOn} />
+      </div>
+
+      <div>
+        <Switch checked={on} onChange={setOn}>
+          Label on right
+        </Switch>
+      </div>
+
+      <div>
+        <SwitchGroup>
+          <SwitchLabel>Label on left</SwitchLabel>
+          <Switch checked={on} onChange={setOn} />
+        </SwitchGroup>
+      </div>
+    </div>
+  )
+}
+
+<SwitchExample />
+
+```jsx
+import { Switch, SwitchLabel, SwitchGroup } from 'yogi-ui';
+import { useState } from 'react';
+
+export const SwitchExample = () => {
+  const [on, setOn] = useState(false);
+
+  return (
+    <div className={'space-y-4'}>
+      <div>
+        <Switch checked={on} onChange={setOn} />
+      </div>
+
+      <div>
+        <Switch checked={on} onChange={setOn}>
+          Label on right
+        </Switch>
+      </div>
+
+      <div>
+        <SwitchGroup>
+          <SwitchLabel>Label on left</SwitchLabel>
+          <Switch checked={on} onChange={setOn} />
+        </SwitchGroup>
+      </div>
+    </div>
+  )
+}
+```
